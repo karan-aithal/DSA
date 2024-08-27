@@ -1,8 +1,20 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-//int IOFNRChar(char str[])
-//{
+
+struct Node
+{
+    int data;
+    struct Node* next;
+    /* data */
+};
+
+void class LinkedList
+{
+
+}
+// int IOFNRChar(char str[])
+// {
     
 //  for (auto i : s) {
 //         if (count(s.begin(), s.end(), i) == 1) {
@@ -15,17 +27,17 @@
 //     }
 //}
 
-void func(){}
+// void func(){}
 
-int main()
-{
-char string[] = "abcdeacf";  // string is a char array in C
-printf("%s\n", string);
-printf("Hello World \n \r");
-printf("%d %f %c %s %u %ld");
+// int main()
+// {
+// char string[] = "abcdeacf";  // string is a char array in C
+// printf("%s\n", string);
+// printf("Hello World \n \r");
+// printf("%d %f %c %s %u %ld");
 
-return 0;
-}
+// return 0;
+// }
 
 
 
