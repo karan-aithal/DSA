@@ -95,7 +95,7 @@ for (int i = 0; i < n; i++)
     return second;
 }
 
-int SecondLargestElement( int *arr, int n)
+int SecondLargestElement(int *arr, int n)
 {
     // OPTIMAL
     // TC - Single Pass (For loop ) , 
