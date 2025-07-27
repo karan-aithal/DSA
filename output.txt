@@ -1,2 +1,1 @@
-Sum: 150
-Average: 30.00
+Palindrome: 6006 true
