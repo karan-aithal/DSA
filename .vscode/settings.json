@@ -3,6 +3,11 @@
     "files.associations": {
         "vector": "cpp",
         "algorithm": "cpp",
-        "iostream": "cpp"
-    }
+        "iostream": "cpp",
+        "set": "cpp",
+        "map": "cpp",
+        "string": "cpp",
+        "ostream": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "disabled"
 }
