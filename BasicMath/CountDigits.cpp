@@ -14,6 +14,14 @@ int countDigits(int n)
         
     }
     return cnt;
+
+    // count digits using log10 !!
+    // cnt = (int)log10(n)+1; // log(1234) = 3.0969100 + 1 = 4.09 ~ 4 digits
+
+    // WHENEVER WE HAVE DIVISON
+    // if iterations depends on division of numbers 
+    // we can use logn , n => x/n number 
+
 }
 
 

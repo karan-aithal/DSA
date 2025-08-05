@@ -7,6 +7,9 @@
 #include <set>
 using namespace std;
 
+// PALINDROME -> 
+// REV == ACTUAL:   store a duplicate of act num
+
 int Rev(int n ) {
     int revnum =0;
     int rem =0;
