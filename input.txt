@@ -20,4 +20,5 @@ if rp >
 lp ++
 
 if lp >
-rp --
+rp --5
+7 1 5 2 6

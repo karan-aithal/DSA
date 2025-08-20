@@ -29,3 +29,5 @@ currProf 6 - 2 = 4
 currProf 1 - 1 = 4
 
 The maximum profit is 4
+
+7 1 5 2 6
