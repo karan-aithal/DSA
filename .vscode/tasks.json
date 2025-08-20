@@ -1,0 +1,32 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "shell",
+      "label": "Compile selected C++ file",
+      "command": "C:\\MingW\\MinGW\\bin\\g++.exe",
+      "args": [
+        "-pipe",
+        "-g",
+        "-march=native",
+        "-std=c++17",
+        "-Wall",
+        "-Wshadow",
+        "-Wno-unused-result",
+        "${file}",
+        "-o",
+        "${fileDirname}/${fileBasenameNoExtension}"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "presentation": {
+        "reveal": "always"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ]
+}
