@@ -1,66 +1,93 @@
 {
-    "tasks": [
-        {
-            "type": "shell",
-            "label": "C/C++: g++ build active file",
-            "options": {
-                "cwd": "${workspaceFolder}"
-            },
-            "problemMatcher": [
-                "$gcc"
-            ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
-            "windows": {
-                "command": "C:\\msys64\\ucrt64\\bin\\g++.exe",
-                "args": [
-                    "-pipe",
-                    // "-fsanitize=signed-integer-overflow,undefined", Causes compilation error in Windows
-                    "-g",
-                    "-march=native",
-                    // "-O2", This optimization causes errors while Debugging
-                    // "-std=c++17", Causes compilation error in Windows
-                    "-Wall",
-                    "-Wshadow",
-                    "-Wno-unused-result",
-                    "${file}",
-                    "-o",
-                    "${fileDirname}/${fileBasenameNoExtension}"
-                ]
-            },
-            "linux": {
-                "command": "/usr/bin/g++",
-                "args": [
-                    "-pipe",
-                    "-fsanitize=signed-integer-overflow,undefined",
-                    "-g",
-                    "-march=native",
-                    // "-O2", This optimization causes errors while Debugging
-                    "-std=c++17",
-                    "-Wall",
-                    "-Wshadow",
-                    "-Wno-unused-result",
-                    "${file}",
-                    "-o",
-                    "${fileDirname}/${fileBasenameNoExtension}"
-                ],
-            }
-        },
-        {
-            "label": "Clean Executable (Windows)",
-            "type": "shell",
-            "command": "cmd",
-            "args": [
-                "/c",
-                "del",
-                "/f",
-                "/q",
-                "${fileDirname}\\${fileBasenameNoExtension}.exe"
-            ],
-            "problemMatcher": []
-        }
-    ],
-    "version": "2.0.0"
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "shell",
+      "label": "C/C++: g++ build active file",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "windows": {
+        "command": "C:\\msys64\\ucrt64\\bin\\g++.exe",
+        "args": [
+          "-pipe",
+          // "-fsanitize=signed-integer-overflow,undefined", Causes compilation error in Windows
+          "-g",
+          "-march=native",
+          // "-O2", This optimization causes errors while Debugging
+          // "-std=c++17", Causes compilation error in Windows
+          "-Wall",
+          "-Wshadow",
+          "-Wno-unused-result",
+          "${file}",
+          "-o",
+          "${fileDirname}/${fileBasenameNoExtension}"
+        ]
+      },
+      "linux": {
+        "command": "/usr/bin/g++",
+        "args": [
+          "-pipe",
+          "-fsanitize=signed-integer-overflow,undefined",
+          "-g",
+          "-march=native",
+          // "-O2", This optimization causes errors while Debugging
+          "-std=c++17",
+          "-Wall",
+          "-Wshadow",
+          "-Wno-unused-result",
+          "${file}",
+          "-o",
+          "${fileDirname}/${fileBasenameNoExtension}"
+        ],
+      }
+    },
+    {
+      "label": "Clean Executable (Windows)",
+      "type": "shell",
+      "command": "cmd",
+      "args": [
+        "/c",
+        "del",
+        "/f",
+        "/q",
+        "${fileDirname}\\${fileBasenameNoExtension}.exe"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "type": "shell",
+      "label": "Compile selected C++ file",
+      "command": "C:\\MingW\\MinGW\\bin\\g++.exe",
+      "args": [
+        "-pipe",
+        "-g",
+        "-march=native",
+        "-std=c++17",
+        "-Wall",
+        "-Wshadow",
+        "-Wno-unused-result",
+        "${file}",
+        "-o",
+        "${fileDirname}/${fileBasenameNoExtension}"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "presentation": {
+        "reveal": "always"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ]
 }
