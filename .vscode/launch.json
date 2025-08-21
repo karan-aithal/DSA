@@ -56,7 +56,8 @@
           "ignoreFailures": true
         }
       ],
-      "preLaunchTask": "Compile selected C++ file"
+      "preLaunchTask": "Compile selected C++ file",
+      "postDebugTask": "Clean Exe"
     }
   ]
 }

@@ -88,6 +88,19 @@
         "kind": "build",
         "isDefault": true
       }
+    },
+    {
+      "label": "Clean Exe",
+      "type": "shell",
+      "command":"cmd",
+      "args": [
+        "/c",
+        "del",
+        "/f",
+        "/q",
+        "${fileDirname}\\${fileBasenameNoExtension}.exe"
+      ],
+      "problemMatcher":[]
     }
   ]
 }
