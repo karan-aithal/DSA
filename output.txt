@@ -1,1 +1,31 @@
-The maximum profit is 5
+7
+0
+0
+currProf 7 - 7 = 0
+
+2
+0
+0
+currProf 2 - 2 = 0
+
+2
+3
+3
+currProf 5 - 2 = 3
+
+2
+3
+3
+currProf 3 - 2 = 3
+
+2
+4
+4
+currProf 6 - 2 = 4
+
+1
+4
+4
+currProf 1 - 1 = 4
+
+The maximum profit is 4

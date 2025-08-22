@@ -14,16 +14,25 @@ int StockBS(int arr[], int n)
 
     int minPrice = INT_MAX;
     int maxProf = 0;
+    int currProf = 0;
 
     for (int i = 0; i < n; i++)
     {
-        // Update the minPrice if it is greater than the current element of the array
+        // Update the minPrice if it is greater than the
+        // current element of the array
+        // So We BUY first
         minPrice = min(arr[i], minPrice);
+        cout << minPrice << endl;
 
-        // difference of the minPrice with the current element of the array and compare and maintain it in maxPro.
+        // difference of the minPrice with the current element of the array
+        // and compare and maintain it in maxPro.
         // Max Difference -- any diff
-        // stock - diff with small element first 
+        // stock - diff with small element first
         maxProf = max(arr[i] - minPrice, maxProf);
+        // use current value also to calc maxProf
+        cout << maxProf << endl;
+
+        cout << endl;
     }
 
     return maxProf;

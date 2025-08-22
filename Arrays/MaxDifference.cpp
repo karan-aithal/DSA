@@ -20,9 +20,10 @@ int MaxDifference(int arr[], int n)
 
     for (int i = 1; i < n; i++)
     {
-        minVal = min(arr[i], minVal);
-
         maxDiff = max(arr[i] - minVal, maxDiff);
+        // use prev minval to calc maxDiff
+
+        minVal = min(arr[i], minVal);
     }
 
     return maxDiff;
@@ -50,7 +51,7 @@ int main()
 
         int res = MaxDifference(arr, n);
 
-         cout << "The maximum difference with order is: " << res;
+        cout << "The maximum difference with order is: " << res;
 
         return 0;
     }
