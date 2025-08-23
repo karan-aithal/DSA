@@ -39,6 +39,8 @@ using namespace std;
 
 // _016)_Move_All_ZEROs_to_End
 
+// // _017)_Third_Largest_Number
+
 // Array is Data Structure used to store similar elements consicue
 
 // Array uses 10^7 max size/length globally
@@ -303,6 +305,51 @@ int SecondLargestElement(int *arr, int n)
 
     return second;
 }
+
+
+int ThirdLargestElement(int *arr, int n)
+{
+    // OPTIMAL
+    // TC - Single Pass (For loop ) ,
+    // SC - updates both largest and second and third simultaneously
+    //
+    int largest = arr[0];
+    int second = -1; // initial must be a -ve / smallest number
+    int left = 0, right = arr.size() - 1, kth;
+
+    // 2  3  1  5  6  4
+    // 3  2  1  5  6  4
+    // p
+    //    l
+    //                r
+    int pivot = arr[left] ; // random Pivot
+    int l = left + 1 ;
+    int r = right;
+
+    int idx = partition(arr, left, right);
+
+    while (l <= r) {
+        if (arr[l] < pivot && arr[r] > pivot) {
+            swap(arr[l], arr[r]);
+            l++ ;
+            r-- ;
+        }
+
+        if (arr[l] >= pivot) {
+            l++;
+        }
+        if (arr[r] <= pivot) {
+            r--;
+        }
+
+
+
+    
+    }
+
+    return second;
+}
+
 
 int SecondSmallestElementArraywithoutSorting(int *arr, int n)
 {
