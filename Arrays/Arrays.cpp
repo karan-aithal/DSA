@@ -142,7 +142,6 @@ void ReverseArray(int arr[], int n, int start, int end)
     // return arr; // by defualt arr is passed as pointer in C++  so no return or dup required
 }
 
-
 // 009 function will Remove_Duplicates_from_a_sorted_array
 int RemoveDuplicates_sorted_array(int arr[], int n)
 {
@@ -188,7 +187,6 @@ int RemoveDuplicates_sorted_array(int arr[], int n)
     // 3. Use a temp array to store without duplicate -- extra space
 }
 
-
 // 011  Largest_Number
 // Pass array to function using pointers
 int LargestElementArray(int *arr, int n)
@@ -208,9 +206,7 @@ int LargestElementArray(int *arr, int n)
 
     return largest; // 1. returns largest element in an array
 
-   
-   
-    //2.  To return Index of Largest element
+    // 2.  To return Index of Largest element
     int largeindx = 0;
 
     for (int i = 0; i < n; i++)
@@ -220,7 +216,6 @@ int LargestElementArray(int *arr, int n)
     }
 
     return largeindx;
-
 }
 
 int SecondLargestElementArray(int *arr, int n)
@@ -306,7 +301,6 @@ int SecondLargestElement(int *arr, int n)
     return second;
 }
 
-
 int ThirdLargestElement(int *arr, int n)
 {
     // OPTIMAL
@@ -315,41 +309,74 @@ int ThirdLargestElement(int *arr, int n)
     //
     int largest = arr[0];
     int second = -1; // initial must be a -ve / smallest number
+    int third = -1;
     int left = 0, right = arr.size() - 1, kth;
+
+    for (int i = 0; i < n; i++)
+    {
+        if (arr[i] > largest)
+        {
+            second = largest;
+            largest = a[i];
+        }
+        else if (a[i] > second && a[i] < largest)
+        {
+            second = a[i];
+        }
+        else if (a[i] < second && a[i] > third)
+        {
+            third = a[i];
+        }
+    }
+}
+
+int KthLargestElement(int *arr, int n, int k)
+{
 
     // 2  3  1  5  6  4
     // 3  2  1  5  6  4
     // p
     //    l
     //                r
-    int pivot = arr[left] ; // random Pivot
-    int l = left + 1 ;
+
+    // 1. Max Heap / Sorting - priority_queue
+    // 2. Quick Select / Sort
+
+
+
+
+
+    // 2. Quick Select -- Divide and conquer using recursion
+    int pivot = arr[left]; // random Pivot
+    int l = left + 1;
     int r = right;
 
     int idx = partition(arr, left, right);
 
-    while (l <= r) {
-        if (arr[l] < pivot && arr[r] > pivot) {
-            swap(arr[l], arr[r]);
-            l++ ;
-            r-- ;
-        }
+    while (l <= r)
+    {
 
-        if (arr[l] >= pivot) {
+        if (arr[l] < pivot &&)
+
+            if (arr[l] < pivot && arr[r] > pivot)
+            {
+                swap(arr[l], arr[r]);
+                l++;
+                r--;
+            }
+
+        if (arr[l] >= pivot)
+        {
             l++;
         }
-        if (arr[r] <= pivot) {
+        if (arr[r] <= pivot)
+        {
             r--;
         }
-
-
-
-    
     }
 
     return second;
 }
-
 
 int SecondSmallestElementArraywithoutSorting(int *arr, int n)
 {
@@ -418,6 +445,7 @@ int main()
     int k = RemoveDuplicates_sorted_array(arr, n);
 
     cout << "The array after removing duplicate elements is " << endl;
+    
     for (int i = 0; i < k; i++)
     {
         cout << arr[i] << " ";
