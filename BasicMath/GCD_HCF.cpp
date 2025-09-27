@@ -28,7 +28,7 @@ int GcdHcf(int n1, int n2)
 
     // Since you are calculating Highest common Factor
     // Start from min(n1, n2) !!
-    for (int i = n1 ; i >=1; i--)
+    for (int i = min(n1, n2); i >= 1; i--)
     {
         // Same time co,mplexity
     }
@@ -40,16 +40,28 @@ int GcdHcf(int n1, int n2)
 // gcd (a-b, b)
 // gcd (20,15) ->
 //  gcd(5, 15) ->
-//  gcd(-10, 15) x 
-
+//  gcd(-10, 15) x
+// keep dividing the larger number by the smaller number until one of the remainder is 0;
+// large/ small = remainder => store in respective number
 int Euclidian_GcdHcf(int n1, int n2)
 {
+    int a = n1;
+    int b = n2;
 
+    while (a > 0 && b > 0)
+    {
+        if (a > b)
+            a = a % b; // 1st loop 40 / 15 => r = 10  --> a =10 ,
+
+        else
+            b = b % a; // 2nd loop 15 / 10 --> b = 5
+    }
+
+    if (a == 0)
+        return b;
+    else if (b == 0)
+        return a;
 }
-
-
-
-
 
 int main()
 {

@@ -1,6 +1,9 @@
 #include <iostream>
 using namespace std;
 
+
+// 4! (read as "four factorial") is calculated as 4 × 3 × 2 × 1
+
 int factorial(int n)
 {
     if (n <= 1)

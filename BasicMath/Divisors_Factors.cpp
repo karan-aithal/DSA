@@ -8,7 +8,7 @@
 using namespace std;
 
 // Only find till Number all the divisors
-// to reduce time complexity use sqrt(N) instead of N
+// to reduce time complexity use sqrt(N) -- i * i <= n instead of N
 // O(sqrt(N))
 void Divisors(int n)
 {
@@ -18,7 +18,7 @@ void Divisors(int n)
         if (n % i == 0)
             cout << i << " ";
 
-        // if ((n / i) != 1)
+        // if ((n / i) != i)  // donot print repeating factor in middle 6*6 , 7*7 , 8*8 ....
         // {
         //     cout << n / i << " "; // divisors after sqrt(N)-> N
         //     // i * n/i = n
@@ -26,6 +26,7 @@ void Divisors(int n)
         //      Sorting required
         // }
     }
+
 }
 
 int main()
