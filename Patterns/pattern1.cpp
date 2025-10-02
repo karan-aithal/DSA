@@ -208,7 +208,7 @@ void printPattern9(int row)
         }
 
         // star
-        for (int j = 1; j <= 2 * i - 1; j++)
+        for (int j = 1; j <= 2 * i - 1; j++) // odd number of stars 1, 3, 5, 7, 
         {
             cout << "*";
         }
