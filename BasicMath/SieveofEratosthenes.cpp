@@ -15,7 +15,7 @@ using namespace std;
 // Find multiples of a number and cross it out
 // Remnaining are Primes
 
-void Eratosthenes()
+void Eratosthenes(int n)
 {
 
     int prime[n] = {1};
