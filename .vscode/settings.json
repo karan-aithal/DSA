@@ -58,6 +58,7 @@
   "C_Cpp_Runner.msvcSecureNoWarnings": false,
   "debug.onTaskErrors": "showErrors",
   "files.associations": {
+    "iostream": "cpp",
     "vector": "cpp",
     "algorithm": "cpp",
     "iostream": "cpp",
