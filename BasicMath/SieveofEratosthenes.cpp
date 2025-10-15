@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -16,9 +16,17 @@ using namespace std;
 // Remnaining are Primes
 
 void Eratosthenes(int n)
-{
+{   
+    // not working as n is compiler time constant    
+    // const int N = n;
+    // int prime[N] = {1}; // all 1
 
-    int prime[n] = {1};
+    vector<int> prime(n, 1); // all 1
+
+    for (int i = 0; i < n; i++)
+    {
+        prime[i] = 1; // mark all as true
+    }
 
     for (int i = 2; i < n; i++)
     {
@@ -27,7 +35,7 @@ void Eratosthenes(int n)
             for (int j = i * 2; i < n; j = j + i) // start from i x 2 in tables for i and increment by i
             {
                 // if (n % i == 0) // not required as already looping only through multiples above
-                prime[i] = 0
+                prime[i] = 0; // mark as not prime
             }
         }
     }
@@ -59,7 +67,7 @@ int main()
         int n = 0;
         cin >> n;
 
-        Eratosthenes();
+        Eratosthenes(n);
         // Call solve or simillar function with args
 
         return 0;

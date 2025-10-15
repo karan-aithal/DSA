@@ -17,6 +17,32 @@ typedef long long ll;
 
 
 // Usually Max Subarray is solved using a 2 pointer approach
+// 
+// 1. Initialize two pointers, left and right, both starting at the beginning of the array.
+// 2. Initialize variables to keep track of the current sum and the maximum sum found so far.
+// 3. Move the right pointer to expand the window and add the current element to the current sum.
+// 4. If the current sum exceeds the maximum sum, update the maximum sum.
+// 5. If the current sum becomes negative, move the left pointer to the right to shrink the window and reset the current sum.
+// 6. Repeat steps 3-5 until the right pointer reaches the end of the array.
+// 7. Return the maximum sum found.
+
+
+// for(i=0->n) for(j=i->n) ( for(i=0->n) sum+=arr[j] )))
+// // Time Complexity: O(n^3)
+
+// 1 pass -  prefix sum
+//  create another array => prefix sum array
+// prefix[0] = arr[0]
+// prefix[i] = prefix[i-1] + arr[i] ....
+// Time Complexity: O(n^2)
+// 2 pass - max in prefix sum
+// for(i=0->n) for(j=i->n) ( prefix sum sum+=arr[k] )))
+
+//
+//
+//
+//
+
 int MaxSubarraySum(vector<int> &nums)
 {
     int count = 0;
@@ -35,6 +61,7 @@ int MaxSubarraySum(vector<int> &nums)
 }
 
 
+
 int main()
 {
     // Fast I/O optimization: Untie C++ streams from C stdio and cin from cout
@@ -51,6 +78,7 @@ int main()
     int result = 0;
     // Loop to read 'n' integers from a single line, separated by spaces
     // cin automatically handles space-separated input by default
+
     for (int i = 0; i < n; ++i)
     {
         int num;
