@@ -1,5 +1,8 @@
 # DSA-CP
 
+CODE\dsa-cp>git push github main
+Everything up-to-date
+
 # CP-VSCode-Setup
 A Competitive Programming setup using VSCode for C++ users in Windows and Ubuntu with Debugging support.
 
