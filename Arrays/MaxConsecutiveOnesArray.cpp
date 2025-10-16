@@ -15,6 +15,18 @@ typedef long long ll;
 #define all(x) (x).begin(), (x).end()
 #define sz(x) ((ll)(x).size())
 
+// 1, 1, 0, 1, 1, 1, 0, 1, 1
+// max consecutive 1's = 3
+//
+// for (int i = 0; i < count; i++)
+// {
+//     if(nums[i] == 1)
+//         count++;
+//     else
+//        res =  max(count, res);
+//         count = 0;
+// }
+
 int findMaxConsecutiveOnes(vector<int> &nums)
 {
     int count = 0;

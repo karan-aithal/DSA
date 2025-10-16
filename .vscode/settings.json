@@ -78,7 +78,9 @@
     "valarray": "cpp",
     "functional": "cpp",
     "unordered_set": "cpp",
-    "string_view": "cpp"
+    "string_view": "cpp",
+    "bitset": "cpp",
+    "format": "cpp"
   },
   "C_Cpp.errorSquiggles": "disabled"
 }
