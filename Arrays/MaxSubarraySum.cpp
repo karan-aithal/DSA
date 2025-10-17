@@ -15,17 +15,15 @@ typedef long long ll;
 #define all(x) (x).begin(), (x).end()
 #define sz(x) ((ll)(x).size())
 
-
 // Usually Max Subarray is solved using a 2 pointer approach
-// 
+//
 // 1. Initialize two pointers, left and right, both starting at the beginning of the array.
 // 2. Initialize variables to keep track of the current sum and the maximum sum found so far.
 // 3. Move the right pointer to expand the window and add the current element to the current sum.
 // 4. If the current sum exceeds the maximum sum, update the maximum sum.
-// 5. If the current sum becomes negative, move the left pointer to the right to shrink the window and reset the current sum.
+// 5. If the current sum becomes negative, move the left pointer to the place of right pointer to shrink the window and reset the current sum.
 // 6. Repeat steps 3-5 until the right pointer reaches the end of the array.
 // 7. Return the maximum sum found.
-
 
 // for(i=0->n) for(j=i->n) ( for(i=0->n) sum+=arr[j] )))
 // // Time Complexity: O(n^3)
@@ -51,16 +49,37 @@ int MaxSubarraySum(vector<int> &nums)
     int Maxsum = 0;
     int sum = 0;
 
+    
+    while (rp <= nums.size())
+    {
+        sum = sum + nums[rp]; // keep adding next element to current sum using right pointer
+        Maxsum = max(sum, Maxsum);
+       
+        // if negative start a new subarray
+        if (sum < 0)
+        {
+            sum = 0;
+            // sum = sum - nums[lp];
+            lp = rp + 1;
+        }
+
+        rp++;       
+
+    }
+
+
+    // Kadane's Algorithm !!
+    // dynamic programming technique
     for (int i = 0; i < nums.size(); i++)
     {
-            sum =max(nums[i], sum + nums[i]); 
-            // add current element to previous sum
-            Maxsum = max(Maxsum, sum);            
-    }    
+        // if sum < nums[i] , we store nums[i] and start a new array
+        sum = max(nums[i], sum + nums[i]);
+
+        // add current element to previous sum
+        Maxsum = max(Maxsum, sum);
+    }
     return res;
 }
-
-
 
 int main()
 {
@@ -90,5 +109,5 @@ int main()
 
     cout << result;
 
-        return 0;
+    return 0;
 }
