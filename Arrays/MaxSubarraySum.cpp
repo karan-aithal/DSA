@@ -16,6 +16,7 @@ typedef long long ll;
 #define sz(x) ((ll)(x).size())
 
 // Usually Max Subarray is solved using a 2 pointer approach
+// Sliding Window Approach
 //
 // 1. Initialize two pointers, left and right, both starting at the beginning of the array.
 // 2. Initialize variables to keep track of the current sum and the maximum sum found so far.
