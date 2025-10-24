@@ -39,20 +39,20 @@ int thirdLargest(vector<int> nums){
 
 
 
-1. choose median of aray as pivot
-2. swap last element with median element 
-3. now l = 0 , r = last 2nd element as, last element is pivot
-4. compare arr[l] > pivot and arr[r] < pivot , then swap arr[l] , arr[r]
-5. l++, r--;
-6. while (l<=r)
-7. when l == r, swap pivot element back to l or r position ------><------ 
-such that all elem right are >, and all elem to left are <
-8. Call quicksort on the left sublist.
-and choose pivot as r/2(median), where r is the position of overlap previously
+// 1. choose median of aray as pivot
+// 2. swap last element with median element 
+// 3. now l = 0 , r = last 2nd element as, last element is pivot
+// 4. compare arr[l] > pivot and arr[r] < pivot , then swap arr[l] , arr[r]
+// 5. l++, r--;
+// 6. while (l<=r)
+// 7. when l == r, swap pivot element back to l or r position ------><------ 
+// such that all elem right are >, and all elem to left are <
+// 8. Call quicksort on the left sublist.
+// and choose pivot as r/2(median), where r is the position of overlap previously
 
-repeat the same with moving pivot to the end and quick sorting only left sublist 
+// repeat the same with moving pivot to the end and quick sorting only left sublist 
 
-if Left sublist contains a single element which means it is sorted.
+// if Left sublist contains a single element which means it is sorted.
 
 
 
