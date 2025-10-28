@@ -69,6 +69,7 @@ vector<int> topKFrequent(vector<int> &nums, int k)
     // add top frequent elements first until k elements are added
     // iterate from end to start
     
+    //Travese buckets from end to start upto frequency k and add elements to result
     for (int i = buckets.size()-1; i > 0; i--)
     {
         for (int n : buckets[i])
