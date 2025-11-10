@@ -38,45 +38,49 @@ void trap(vector<int> &height)
 
         // Lp is the minimum pointer
         // check height[lp] with leftMax to update , Then increment lp
-        if (height[lp] < height[rp])
+        if (leftMax < rightMax)
         {
-            if (height[lp] >= leftMax)
+            lp++; // increment before checking height[lp]
+
+            if (height[lp] > leftMax)
             {
                 leftMax = height[lp];
             }
-            else
-                waterTraped[lp] = leftMax - height[lp];
-                // if it is not greater
-                // if leftMax is min then water trapped is leftMax - height[lp]
-
-            lp++;
-        }
-
-        if (height[rp] < height[lp])
-        {
-            if (height[lp] >= rightMax)
+            else if (height[lp] > min(leftMax, rightMax)) // if water trapped is negative then make it 0
             {
-                rightMax = height[rp];
+                waterTraped[lp] = 0; // make sure current index height is not negative
             }
             else
-                waterTraped[rp] = rightMax - height[rp];
-                // if it is not greater
-                // if rightMax is min then water trapped is rightMax - height[rp]
+                waterTraped[lp] = min(leftMax, rightMax) - height[lp];
+        }
 
+        if (leftMax > rightMax)
+        {
             rp--;
+
+            if (height[rp] > rightMax)
+                rightMax = height[rp];
+
+            else if (height[rp] > min(leftMax, rightMax))
+                waterTraped[rp] = 0; // if water trapped is negative then make it 0
+
+            else
+                waterTraped[rp] = rightMax - height[rp];
+            // if it is not greater
+            // if rightMax is min then water trapped is rightMax - height[rp]
         }
 
         // after updating leftMax and rightMax
         // and moving pointers
         // store water trapped at each index
 
-        if (leftMax <= rightMax)
-        {
-            water[lp] = min(leftMax, rightMax) - height[lp];
-        }
+        // if (leftMax <= rightMax)
+        // {
+        //     water[lp] = min(leftMax, rightMax) - height[lp];
+        // }
 
-        water[lp] = min(leftMax, rightMax) - height[lp];
-        water[rp] = min(leftMax, rightMax) - height[rp];
+        // water[lp] = min(leftMax, rightMax) - height[lp];
+        // water[rp] = min(leftMax, rightMax) - height[rp];
     }
 }
 
@@ -95,7 +99,7 @@ int main()
         cin >> height;
     }
 
-    trap(nums);
+    trap(height);
 
     return 0;
 }
