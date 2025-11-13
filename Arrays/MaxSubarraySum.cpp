@@ -50,7 +50,8 @@ int MaxSubarraySum(vector<int> &nums)
     int Maxsum = 0;
     int sum = 0;
 
-    
+    // Two pointer's 
+    // Extend and Shrink Array
     while (rp <= nums.size())
     {
         sum = sum + nums[rp]; // keep adding next element to current sum using right pointer
@@ -70,7 +71,8 @@ int MaxSubarraySum(vector<int> &nums)
 
 
     // Kadane's Algorithm !!
-    // dynamic programming technique
+    // Dynamic programming technique
+    // Extend and Reset Array
     for (int i = 0; i < nums.size(); i++)
     {
         // if sum < nums[i] , we store nums[i] and start a new array
