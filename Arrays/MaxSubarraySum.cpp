@@ -38,9 +38,13 @@ typedef long long ll;
 // for(i=0->n) for(j=i->n) ( prefix sum sum+=arr[k] )))
 
 //
+// Kadane's Algorithm
+// Extend and Reset array
+
 //
-//
-//
+// Two Pointer's Approach
+// Extend and Shrink array
+
 
 int MaxSubarraySum(vector<int> &nums)
 {
