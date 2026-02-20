@@ -41,12 +41,6 @@ void MatchMaking(int N, int k, vector<int> nums)
         {
             int Index = unmatchedIndex[j]; // get index for first elements from unmatchedIndex
 
-            // if (unmatched.empty())
-            // {
-            //     unmatched.push_back(nums[i]); // add current to unmatched
-            //     break;
-            // }
-
             // check if unmatchedIndex element within range of current nums[i]
 
             // nums[unmatchedIndex[j]] within range of nums[i] + k or nums[i] - k
@@ -60,12 +54,12 @@ void MatchMaking(int N, int k, vector<int> nums)
                 ans[i] = Index + 1; // store matched index +1 (1-based indexing) j + 1
                 ans[Index] = i + 1; // update matched index for previous unmatched person j = i+ 1
                 // storing both matches indexes with each other in ans 
-
+                
                 // unmatched.push_back(prevnum); // add to unmatched
                 //  if found match and remove from unmatched queue, and update matched indexes -1 within ans
                 matched = true;
                 break; // FIFO Prio -- break after first match
-            }   
+            }
 
             if(!matched)
             {
@@ -104,3 +98,4 @@ int main()
         return 0;
     }
 }
+

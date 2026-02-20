@@ -21,12 +21,24 @@ typedef long long ll;
 
 void solve()
 {
-    
-std::pair<int,int> 
-// comparisons are lexicographical by default: 
-// it compares the first elements; if they are equal, it compares the second elements.
-(a.first < b.first) || (!(b.first < a.first) && a.second < b.second)
-// here condition 1 , condition 2, condition 3 will be checked in order 
+
+//     A sequence of length n has exactly n! permutations.
+// Since:
+
+// - The sequence of permutations is finite
+// - And you have tested all possibilities
+// - And none satisfy the constraint (or no new ones satisfy)
+
+// Then:
+// ✔ Exhaustion of permutations → completion of search
+// ✔ Completion of search → no further valid configuration exists
+
+// This is a fundamental principle in:
+// Backtracking algorithms
+// Constraint satisfaction problems
+// Brute-force search
+// Lexicographic permutation generation
+
 
 }
 int main()
