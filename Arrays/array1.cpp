@@ -58,6 +58,63 @@ int main()
     std::cout << "\n"; // Print a newline at the end of the output
 
     // -------------------------------------------------------------
+    // SLIDING WINDOW
+
+    // Longest Substring Without Repeating Characters
+    // 2. Maximum Sum Subarray of Size K
+    // 3. Minimum Window Substring
+    // 4. Longest Repeating Character Replacement
+    // 5. Sliding Window Maximum
+    // 6. Longest Subarray with Ones after Replacement
+    // 7. Smallest Subarray with Sum Greater than S
+    // 8. Frutis into baskets
+    // 10. Find All Anagrams in a String
+    // 11. Subarray sum equals K
+    // 12. Subarry sums divisible by K
+    // 13. Longest subarray with sum k 
+
+    // Constant Length Sliding Window
+    // substrings-of-size-three-with-distinct-characters/
+    // number-of-sub-arrays-of-size-k-and-average-greater-than-or-equal-to-threshold/
+
+    // Variable Length Sliding Window
+    // minimum-size-subarray-sum/
+    // 4. Longest Repeating Character Replacement
+    // Max Consecutive Ones III
+    // https://cses.fi/problemset/task/1141
+    // Shortest subarray with sum atleaast K
+    // 8. Fruits into baskets
+    // binary subarrays with sum
+    // subarrays with k different integers
+    // get equal substrings within budget
+    // replace substring for balanced string
+    // count number of nice subarrays
+    // number of substrings containng all three characters
+    // 5. Sliding Window Maximum
+
+// Extra Problems:
+// https://codeforces.com/contest/616/problem/D
+// https://cses.fi/problemset/task/2428
+// https://cses.fi/problemset/task/1644
+// https://cses.fi/problemset/task/1076
+// https://cses.fi/problemset/task/1077
+
+    // Longest Substring with At Most K Distinct Characters
+    // Longest Substring with At Least K Repeating Characters
+    // Longest Substring with At Most Two Distinct Characters
+    // Longest Substring with At Least Two Repeating Characters
+    // -------------------------------------------------------------
+    // 001 function will find the largest element in an array
+    // 002 function will find the second largest element in an array
+    // 003 function will find the third largest element in an array
+    // 004 function will find the smallest element in an array
+    // 005 function will find the second smallest element in an array
+    // 006 function will check if array is sorted
+    // 007 function will rotate an array to left by d
+    // 008 function will rotate an array to right by d
+    // 009 function will reverse elements in array
+    // 010 function will Remove_Duplicates_from_a_sorted_array
+//-----------------------------------------------------------------
     // Spiral Array Print
     // Max Length Bitonic Subarray
     // Piyush and Magical Park (grid simulation)
