@@ -33,50 +33,65 @@ typedef long long ll;
 
 int maxSubArrayLen(vector<int> &nums, int k)
 {
-    unordered_map<int, int> maparr{{0, -1}};
+    unordered_map<int, int> prefixsum{{0, -1}};
     int maxLen = 0;
     int l = 0;
     int sum = 0;
 
-    for (int r = 0; r < nums.size(); r++)
-    {
-        if (sum < k)
-        {
-            sum = sum + nums[r];
-        }
+//     for (int r = 0; r < nums.size(); r++)
+//     {
+//         if (sum < k)
+//         {
+//             sum = sum + nums[r];
+//         }
 
-        if (sum == k)
-        {
-            maxLen = max(maxLen, r - l + 1);
-        }
+//         if (sum == k)
+//         {
+//             maxLen = max(maxLen, r - l + 1);
+//         }
 
-        if (sum > k)
-        {
-            while (sum > k && l < r)
-            {
-                sum = sum - nums[l];
-                l++;
-            }
+//         if (sum > k)
+//         {
+//             while (sum > k && l < r)
+//             {
+//                 sum = sum - nums[l];
+//                 l++;
+//             }
 
-            // ABOVE IS NOT APPLICABLE BECAUSE WE CAN HAVE -VE NUMBERS IN THE ARRAY, SO WE CANNOT JUST SHRINK THE WINDOW UNTIL SUM > K,
-            // BECAUSE IT MIGHT BE POSSIBLE THAT SUM BECOMES EQUAL TO K AFTER SHRINKING THE WINDOW, SO WE NEED TO CHECK FOR THAT AS WELL
-            // SO WE USE A HASHMAP TO STORE THE PREFIX SUMS AND THEIR INDICES,
+//             // ABOVE IS NOT APPLICABLE BECAUSE WE CAN HAVE -VE NUMBERS IN THE ARRAY, SO WE CANNOT JUST SHRINK THE WINDOW UNTIL SUM > K,
+//             // BECAUSE IT MIGHT BE POSSIBLE THAT SUM BECOMES EQUAL TO K AFTER SHRINKING THE WINDOW, SO WE NEED TO CHECK FOR THAT AS WELL
+//             // SO WE USE A HASHMAP TO STORE THE PREFIX SUMS AND THEIR INDICES,
 
-            // SO THAT WE CAN CHECK IF THERE IS A PREFIX SUM THAT EQUALS TO (CURRENT SUM - K), IF YES THEN WE CAN UPDATE THE MAXLEN
-            // INVERSE OF CURRENT SUM - PREFIX SUM AT INDEX = K => PREFIX SUM = CURRENT SUM - K
-            // EG :- [1 -1 5 -2 3] K = 3
-            // PREFIX SUMS = [1, 0, 5, 3, 6]
-            // CURRENT SUM
-            // WHEN WE ARE AT INDEX 3 (VALUE = -2) CURRENT SUM = 3, 
-            // WE CHECK IF THERE IS A PREFIX SUM THAT EQUALS TO (CURRENT SUM - PREFIX SUM = K) 
-            //= 3 - 3 = 0 WRONG, 6 - 3 = 3 CORRECT
-            // DIFF OF ANY 2 PREFIX SUMS = K, THEN THERE IS A SUBARRAY BETWEEN THOSE 2 INDICES THAT SUMS TO K
-            // SO WE CHECK IF THERE IS A PREFIX SUM THAT EQUALS TO (CURRENT SUM - K), 
-            // IF YES THEN WE CAN UPDATE THE MAXLEN = MAX(MAXLEN, CURRENT INDEX - PREFIX SUM INDEX)
-            // YES THERE IS AT INDEX 1, SO WE CAN UPDATE MAXLEN = MAX(MAXLEN, CURRENT INDEX - PREFIX SUM INDEX) = MAX(0, 3 - 1) = 2
-        }
-    }
+//             // SO THAT WE CAN CHECK IF THERE IS A PREFIX SUM THAT EQUALS TO (CURRENT SUM - K), IF YES THEN WE CAN UPDATE THE MAXLEN
+//             // INVERSE OF CURRENT SUM - PREFIX SUM AT INDEX = K => PREFIX SUM = CURRENT SUM - K
+//             // EG :- [1 -1 5 -2 3] K = 3
+//             // PREFIX SUMS = [1, 0, 5, 3, 6]
+//             // CURRENT SUM
+//             // WHEN WE ARE AT INDEX 3 (VALUE = -2) CURRENT SUM = 3, 
+//             // WE CHECK IF THERE IS A PREFIX SUM THAT EQUALS TO (CURRENT SUM - PREFIX SUM = K) 
+//             //= 3 - 3 = 0 WRONG, 6 - 3 = 3 CORRECT
+//             // DIFF OF ANY 2 PREFIX SUMS = K, THEN THERE IS A SUBARRAY BETWEEN THOSE 2 INDICES THAT SUMS TO K
+//             // SO WE CHECK IF THERE IS A PREFIX SUM THAT EQUALS TO (CURRENT SUM - K), 
+//             // IF YES THEN WE CAN UPDATE THE MAXLEN = MAX(MAXLEN, CURRENT INDEX - PREFIX SUM INDEX)
+//             // YES THERE IS AT INDEX 1, SO WE CAN UPDATE MAXLEN = MAX(MAXLEN, CURRENT INDEX - PREFIX SUM INDEX) = MAX(0, 3 - 1) = 2
+//         }
+//     }
+//     return maxLen;
+
+for (int r = 0; r < nums.size(); r++)
+{
+    // prefix sum
+    prefixsum[nums[r]] = r;
+
+}
+
+for (int r = 0; r < nums.size(); r++ )
+{
+    currentSum = currentSum + nums[r];
+    if (currentSum + nums[r] )
+}
     return maxLen;
+
 }
 
 int main()

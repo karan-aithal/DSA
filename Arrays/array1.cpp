@@ -61,6 +61,9 @@ int main()
     // SLIDING WINDOW
 
     // Longest Substring Without Repeating Characters
+    // 325. Maximum Size Subarray Sum Equals k 🔒
+    // 560. Subarray Sum Equals K
+    // 2461. Maximum Sum of Distinct Subarrays With Length K
     // 2. Maximum Sum Subarray of Size K
     // 3. Minimum Window Substring
     // 4. Longest Repeating Character Replacement
