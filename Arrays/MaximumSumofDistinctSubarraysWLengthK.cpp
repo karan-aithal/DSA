@@ -34,60 +34,74 @@ typedef long long ll;
 
 // HashSet , Fixed Sliding Window k ,
 //
-// Set here give TLE - Time Limit Exceeded , because of the high constant factors of C++ STL set and unordered_set.
+// X Set here give TLE - Time Limit Exceeded , because of the high constant factors of C++ STL set and unordered_set.
 // 1. High Constant Factors (C++)
-// std::set in C++ is implemented as a balanced binary search tree (usually a Red-Black Tree). 
+// std::set in C++ is implemented as a balanced binary search tree (usually a Red-Black Tree).
+
+// first check size , then check if distinct ,
+// if size is < k , then check if value is distinct , then add to sum and move forward
+// if size is < k , and value is not distinct, then we remove l element from sum and move forward, l++, r++
+// if size is > k, then we remove l and move forward, l++
+// if size is == k, then we check if sum is greater than maxSum, if yes then update maxSum and move forward, l++, r++
 
 
-void maximumSubarraySum(vector<int> nums, int k)
+long long maximumSubarraySum(vector<int> nums, int k)
 {
 
     int l = 0;
     int r = 0;
-    unordered_set<int> distinct;
+    unordered_map<int, int> distinct;
     long long sum = 0;
     long long maxSum = 0;
 
-    while (r - l < k)
+    while (r < nums.size())
     {
-        // if the element at r is not int set we add it to the set and add it to the sum and move r forward
-        if (distinct.find(nums[r] == distinct.end()))
-        {
-            distanct.insert(nums[r])
-            sum = sum + nums[r];
-            r++;
-            
-        }
-    }
-    else // if window size is > k
-    {
-        sum = sum - nums[l]; // remove the element at l 
-        distinct.erase(nums[l]); // remove the element at l from the set
-        l++;
-    }
+        // if size of map == k , then calc max sum
+        if (distinct.size() == k)
+            maxSum = max(sum, maxSum);
 
-    // first check size , then check if distinct , 
-    // if size is < k , then check if value is distinct , then add to sum and move forward
-    // if size is < k , and value is not distinct, then we remove l element from sum and move forward, l++, r++
-    // if size is > k, then we remove l and move forward, l++
-    // if size is == k, then we check if sum is greater than maxSum, if yes then update maxSum and move forward, l++, r++
+        // Add the cuuren element at r to the map and sum
+        distinct[nums[r]]++;
+        sum = sum + nums[r];
+
+        // if size of window r - l exceeds k -1 , then remove lth element from map and sum
+        if (r - l > k - 1)
+        {
+            distinct[nums[l]]--;
+
+            sum = sum - nums[l];
+
+            if (distinct[nums[l]] == 0)
+                distinct.erase(nums[l]);
+            l++;
+        }
+
+        r++;
+    }
+    // recheck again as we miss the last window when r reaches the end of the array or
+    // channge while condition to l < nums.size() along with r < nums.size()
+    if (distinct.size() == k)
+        maxSum = max(sum, maxSum);
+    return maxSum;
+}
+
 
 int main()
 {
     fast_cin();
     ll t;
-    cin >> t;
+    // cin >> t;
     fast_cin();
     int n;
     cin >> n;
-    vector<int> nums;
+    vector<int> nums(n);
     for (int i = 0; i < n; i++)
     {
         cin >> nums[i];
     }
     int k;
     cin >> k;
-    maximumSubarraySum(nums, k);
+    cout << maximumSubarraySum(nums, k) << endl;
 
     return 0;
 }
