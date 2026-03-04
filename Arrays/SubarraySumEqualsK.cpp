@@ -72,6 +72,7 @@ int subarraySum(vector<int> nums, int k)
         //     m[sum]++;
         // }
         //         ❌ Incorrect.
+        //
         // This only increments when the key is missing.
         // If the key already exists, you don’t increment, so the count never increases after the first time. That breaks the frequency map logic.
     }
